@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Dashboard</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span>Solicitações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <span>Sistema de exames</span>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">PAINEL MÉDICO</span>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="doctor-profile">
+                    <div class="doctor-avatar">
+                        C
+                    </div>
+
+                    <div class="doctor-info">
+                        <strong>Dr. Carlos Henrique</strong>
+                        <span>Médico</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+            <section class="welcome-section">
+
+                <div>
+                    <h2>Olá, Dr. Carlos</h2>
+
+                    <p>
+                        Acompanhe suas solicitações de exames
+                        e consulte o andamento dos pedidos.
+                    </p>
+                </div>
+
+                <button class="primary-button">
+                    + Nova solicitação
+                </button>
+
+            </section>
+
+
+            <!-- CARDS -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <span class="stat-label">Total de solicitações</span>
+                    <strong>08</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Em andamento</span>
+                    <strong>03</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Concluídos</span>
+                    <strong>05</strong>
+                </div>
+
+            </section>
+
+
+            <!-- SOLICITAÇÕES -->
+            <section class="requests-section">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Solicitações recentes</h2>
+
+                        <p>
+                            Últimos exames solicitados
+                        </p>
+                    </div>
+
+                    <button class="filter-button">
+                        Filtrar
+                    </button>
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Exame</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <strong>Maria Oliveira</strong>
+                                </td>
+
+                                <td>
+                                    Hemograma completo
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Solicitado
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>João Santos</strong>
+                                </td>
+
+                                <td>
+                                    Raio-X de tórax
+                                </td>
+
+                                <td>
+                                    18/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status progress">
+                                        Em andamento
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>Ana Costa</strong>
+                                </td>
+
+                                <td>
+                                    Ultrassonografia
+                                </td>
+
+                                <td>
+                                    17/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

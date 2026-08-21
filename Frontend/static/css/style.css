@@ -1,0 +1,1273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f8;
+    color: #172b36;
+}
+
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================
+   LADO DA MARCA
+========================= */
+
+.login-brand {
+    width: 48%;
+    background: #12343b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-brand::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    top: -160px;
+    right: -120px;
+}
+
+.login-brand::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    bottom: -130px;
+    left: -100px;
+}
+
+.brand-content {
+    max-width: 420px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-icon {
+    width: 54px;
+    height: 54px;
+    background: #62d6c5;
+    color: #12343b;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 28px;
+}
+
+.brand-content h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.brand-content p {
+    color: #c6d7da;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.login-form-container {
+    width: 52%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 430px;
+}
+
+.welcome {
+    display: block;
+    color: #3aa99b;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.login-form h2 {
+    font-size: 32px;
+    color: #172b36;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #71838a;
+    font-size: 15px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #344b55;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-label a {
+    color: #3aa99b;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.password-label a:hover {
+    text-decoration: underline;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid #d9e2e5;
+    border-radius: 9px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+    color: #172b36;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: #a4b1b5;
+}
+
+input:focus {
+    border-color: #62bdb1;
+    box-shadow: 0 0 0 3px rgba(98, 214, 197, 0.12);
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.login-button {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #12343b;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background: #1c4b54;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   TEXTO DE SEGURANÇA
+========================= */
+
+.security-text {
+    text-align: center;
+    color: #9aa8ac;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 28px;
+}
+
+
+/* =========================
+   LOGO MOBILE
+========================= */
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+    .login-container {
+        display: block;
+    }
+
+    .login-brand {
+        display: none;
+    }
+
+    .login-form-container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 22px;
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 50px;
+    }
+
+    .mobile-logo .brand-icon {
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        font-size: 19px;
+    }
+
+    .mobile-logo span {
+        font-size: 20px;
+        font-weight: bold;
+        color: #12343b;
+    }
+
+    .login-form h2 {
+        font-size: 28px;
+    }
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f4f7f8;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 245px;
+    min-height: 100vh;
+    background: #12343b;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 10px;
+    margin-bottom: 55px;
+}
+
+.sidebar-brand .brand-icon {
+    width: 42px;
+    height: 42px;
+
+    margin: 0;
+
+    border-radius: 11px;
+
+    font-size: 19px;
+}
+
+.sidebar-brand span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* MENU */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item {
+    padding: 13px 14px;
+
+    color: #b9cccf;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+
+    padding: 15px 10px;
+
+    color: #789398;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.main-content {
+    flex: 1;
+    padding: 32px 42px;
+    max-width: 1500px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.page-label {
+    color: #3aa99b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.topbar h1 {
+    margin-top: 5px;
+
+    font-size: 28px;
+    color: #172b36;
+}
+
+.doctor-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.doctor-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #dcefed;
+    color: #267d73;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.doctor-info strong {
+    color: #344b55;
+    font-size: 13px;
+}
+
+.doctor-info span {
+    color: #8a9a9f;
+    font-size: 12px;
+}
+
+
+/* =========================
+   BOAS-VINDAS
+========================= */
+
+.welcome-section {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    padding: 25px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.welcome-section h2 {
+    color: #172b36;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.welcome-section p {
+    color: #7b8c91;
+    font-size: 13px;
+}
+
+
+/* BOTÃO */
+
+.primary-button {
+    border: none;
+
+    background: #12343b;
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary-button:hover {
+    background: #1c4b54;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    padding: 22px 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-label {
+    color: #7c8d92;
+    font-size: 13px;
+}
+
+.stat-card strong {
+    color: #172b36;
+    font-size: 28px;
+}
+
+
+/* =========================
+   SOLICITAÇÕES
+========================= */
+
+.requests-section {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: #172b36;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #8a999e;
+    font-size: 12px;
+}
+
+.filter-button {
+    border: 1px solid #d9e3e5;
+    background: white;
+
+    color: #52666d;
+
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+
+    color: #8a999e;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    padding: 13px 12px;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+td {
+    padding: 17px 12px;
+
+    color: #64777d;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+td strong {
+    color: #344b55;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status.pending {
+    background: #fff4df;
+    color: #a46c16;
+}
+
+.status.progress {
+    background: #e5f2f7;
+    color: #31748a;
+}
+
+.status.completed {
+    background: #e2f4ef;
+    color: #28796b;
+}
+
+
+/* =========================
+   DASHBOARD RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .doctor-info {
+        display: none;
+    }
+
+    .welcome-section {
+        padding: 20px;
+    }
+
+    .requests-section {
+        padding: 18px;
+    }
+}
+
+/* =========================
+   FORMULÁRIO DE EXAME
+========================= */
+
+.form-card {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    max-width: 900px;
+
+    padding: 30px;
+}
+
+.form-card-header {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+.form-card-header h2 {
+    color: #172b36;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.form-card-header p {
+    color: #89999e;
+    font-size: 13px;
+}
+
+
+/* CAMPOS */
+
+.exam-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    color: #344b55;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    border: 1px solid #d9e2e5;
+    border-radius: 8px;
+
+    padding: 12px;
+
+    background: white;
+
+    color: #344b55;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-field input,
+.form-field select {
+    height: 48px;
+}
+
+.form-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #62bdb1;
+
+    box-shadow:
+        0 0 0 3px rgba(98, 214, 197, 0.12);
+}
+
+.form-field textarea::placeholder {
+    color: #a4b1b5;
+}
+
+
+/* BOTÕES */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #edf1f2;
+}
+
+.cancel-button {
+    padding: 12px 18px;
+
+    border: 1px solid #d9e2e5;
+    border-radius: 8px;
+
+    color: #52666d;
+
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background: #f5f7f8;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        text-align: center;
+    }
+}
+
+/* =========================
+   AÇÕES DO LABORATÓRIO
+========================= */
+
+.action-button {
+    border: 1px solid #c8dfdc;
+
+    background: #edf8f6;
+    color: #28796b;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.action-button:hover {
+    background: #dcefeb;
+}
+
+.action-button.disabled {
+    background: #f2f4f5;
+    border-color: #e2e6e7;
+    color: #9aa6aa;
+
+    cursor: default;
+}
+
+/* =========================
+   ÁREA DO PACIENTE
+========================= */
+
+.patient-exam-card {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+}
+
+.patient-exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+.exam-label {
+    display: block;
+
+    color: #3aa99b;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.patient-exam-header h2 {
+    color: #172b36;
+
+    font-size: 21px;
+
+    margin-bottom: 6px;
+}
+
+.patient-exam-header p {
+    color: #89999e;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   LINHA DO TEMPO
+========================= */
+
+.exam-timeline {
+    margin-top: 25px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+
+    margin-top: 4px;
+
+    border-radius: 50%;
+
+    background: #d9e2e5;
+
+    flex-shrink: 0;
+}
+
+.timeline-item.completed .timeline-dot {
+    background: #3aa99b;
+}
+
+.timeline-item div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.timeline-item strong {
+    color: #344b55;
+
+    font-size: 13px;
+}
+
+.timeline-item span {
+    color: #94a1a5;
+
+    font-size: 11px;
+}
+
+.timeline-line {
+    width: 1px;
+    height: 28px;
+
+    background: #dce4e6;
+
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 650px) {
+
+    .patient-exam-header {
+        flex-direction: column;
+    }
+
+    .patient-exam-card {
+        padding: 20px;
+    }
+}
+
+/* =========================
+   AÇÕES DO PACIENTE
+========================= */
+
+.action-button {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background: #e8f7f4;
+    color: #258f83;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.action-button:hover {
+    background: #d8f0ec;
+}
+
+.action-disabled {
+    color: #a5b0b4;
+
+    font-size: 12px;
+}
+
+/* =========================
+   LAUDO
+========================= */
+
+.report-card {
+    background: white;
+
+    border: 1px solid #e5ecee;
+    border-radius: 12px;
+
+    padding: 32px;
+
+    max-width: 1000px;
+}
+
+.report-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+.report-header h2 {
+    color: #172b36;
+
+    font-size: 22px;
+
+    margin-top: 5px;
+}
+
+.report-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+.report-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.report-info span,
+.report-footer span {
+    color: #8b9ba0;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.report-info strong,
+.report-footer strong {
+    color: #344b55;
+
+    font-size: 13px;
+}
+
+.report-section {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #edf1f2;
+}
+
+.report-section h3 {
+    color: #344b55;
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+.report-section p {
+    color: #65767c;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.report-footer {
+    padding: 25px 0;
+}
+
+.report-footer div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.report-footer small {
+    color: #8b9ba0;
+
+    font-size: 11px;
+}
+
+.report-actions {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.primary-button {
+    border: none;
+
+    background: #12343b;
+
+    color: white;
+}
+
+.secondary-button {
+    background: #eef3f4;
+
+    color: #53666c;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+}
+
+.secondary-button:hover {
+    background: #e3eaec;
+}
+
+
+@media (max-width: 700px) {
+
+    .report-card {
+        padding: 20px;
+    }
+
+    .report-info {
+        grid-template-columns: 1fr;
+    }
+
+    .report-header {
+        flex-direction: column;
+    }
+
+    .report-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
+    }
+}

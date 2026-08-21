@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Área do Paciente</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+                    Meus exames
+                </a>
+
+                <a href="#" class="menu-item">
+                    Histórico
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                Sistema de exames
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">ÁREA DO PACIENTE</span>
+                    <h1>Meus exames</h1>
+                </div>
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        M
+                    </div>
+
+                    <div class="doctor-info">
+                        <strong>Maria Oliveira</strong>
+                        <span>Paciente</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+            <section class="welcome-section">
+
+                <div>
+                    <h2>Olá, Maria</h2>
+
+                    <p>
+                        Acompanhe seus exames e consulte seus laudos.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- RESUMO -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div>
+                        <span class="stat-label">
+                            EXAMES SOLICITADOS
+                        </span>
+
+                        <strong>03</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+                        <span class="stat-label">
+                            EM ANDAMENTO
+                        </span>
+
+                        <strong>01</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+                        <span class="stat-label">
+                            CONCLUÍDOS
+                        </span>
+
+                        <strong>02</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXAME EM ANDAMENTO -->
+            <section class="patient-exam-card">
+
+                <div class="patient-exam-header">
+
+                    <div>
+
+                        <span class="exam-label">
+                            EXAME EM ANDAMENTO
+                        </span>
+
+                        <h2>Hemograma completo</h2>
+
+                        <p>
+                            Solicitado pelo Dr. Carlos Henrique
+                        </p>
+
+                    </div>
+
+                    <span class="status progress">
+                        Em andamento
+                    </span>
+
+                </div>
+
+
+                <div class="exam-timeline">
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot"></div>
+
+                        <div>
+                            <strong>Solicitação realizada</strong>
+
+                            <span>
+                                19/08/2026 às 09:30
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot"></div>
+
+                        <div>
+                            <strong>Exame em andamento</strong>
+
+                            <span>
+                                19/08/2026 às 11:15
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div>
+                            <strong>Exame concluído</strong>
+
+                            <span>
+                                Aguardando conclusão
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HISTÓRICO -->
+            <section class="requests-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Histórico de exames</h2>
+
+                        <p>
+                            Consulte seus exames concluídos e respectivos laudos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Exame</th>
+                                <th>Médico</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Ultrassonografia
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Dra. Mariana Costa
+                                </td>
+
+                                <td>
+                                    10/08/2026
+                                </td>
+
+                                <td>
+
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <a href="laudo.html"
+                                       class="action-button">
+
+                                        Ver laudo
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Raio-X de tórax
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Dr. Carlos Henrique
+                                </td>
+
+                                <td>
+                                    02/08/2026
+                                </td>
+
+                                <td>
+
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <a href="laudo.html"
+                                       class="action-button">
+
+                                        Ver laudo
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Hemograma completo
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Dr. Carlos Henrique
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+
+                                    <span class="status progress">
+                                        Em andamento
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="action-disabled">
+                                        Indisponível
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

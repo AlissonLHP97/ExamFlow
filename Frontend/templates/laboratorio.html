@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Laboratório</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    Solicitações
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                Sistema de exames
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">PAINEL DO LABORATÓRIO</span>
+                    <h1>Solicitações de exames</h1>
+                </div>
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        L
+                    </div>
+
+                    <div class="doctor-info">
+                        <strong>Laboratório Central</strong>
+                        <span>Técnico de laboratório</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- RESUMO -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Novas solicitações
+                    </span>
+
+                    <strong>04</strong>
+                </div>
+
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Em andamento
+                    </span>
+
+                    <strong>03</strong>
+                </div>
+
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Concluídos hoje
+                    </span>
+
+                    <strong>08</strong>
+                </div>
+
+            </section>
+
+
+            <!-- SOLICITAÇÕES -->
+            <section class="requests-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Solicitações recebidas</h2>
+
+                        <p>
+                            Exames enviados pelos médicos
+                        </p>
+                    </div>
+
+                    <button class="filter-button">
+                        Filtrar
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Exame</th>
+                                <th>Médico</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>Maria Oliveira</strong>
+                                </td>
+
+                                <td>
+                                    Hemograma completo
+                                </td>
+
+                                <td>
+                                    Dr. Carlos Henrique
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Solicitado
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="action-button">
+                                        Iniciar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>João Santos</strong>
+                                </td>
+
+                                <td>
+                                    Raio-X de tórax
+                                </td>
+
+                                <td>
+                                    Dra. Mariana Costa
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status progress">
+                                        Em andamento
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="action-button">
+                                        Concluir
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Ana Costa</strong>
+                                </td>
+
+                                <td>
+                                    Ultrassonografia
+                                </td>
+
+                                <td>
+                                    Dr. Carlos Henrique
+                                </td>
+
+                                <td>
+                                    18/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-button disabled"
+                                        disabled
+                                    >
+                                        Concluído
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
