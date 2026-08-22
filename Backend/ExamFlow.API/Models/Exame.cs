@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Descrição { get; set; }
+        public string Descricao { get; set; }
 
-        public ICollection<SolicitacaoExame> Solicitacoes { get; set; }
+        public ICollection<ItemSolicitacaoExame> Itens { get; set; }
     }
 }
