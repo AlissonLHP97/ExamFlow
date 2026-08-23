@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Administração</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+                    Visão geral
+                </a>
+
+                <a href="#" class="menu-item">
+                    Usuários
+                </a>
+
+                <a href="#" class="menu-item">
+                    Pacientes
+                </a>
+
+                <a href="#" class="menu-item">
+                    Solicitações
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                Sistema de Solicitação de Exames
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">
+                        ADMINISTRAÇÃO
+                    </span>
+
+                    <h1>Painel administrativo</h1>
+                </div>
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        AD
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <strong>Administrador</strong>
+
+                        <span>Administrador do sistema</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+            <section class="welcome-section">
+
+                <div>
+
+                    <h2>Visão geral do sistema</h2>
+
+                    <p>
+                        Acompanhe os principais indicadores e solicitações de exames.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- INDICADORES -->
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Usuários cadastrados
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Pacientes cadastrados
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Solicitações hoje
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Solicitações pendentes
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Em análise
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Exames concluídos
+                    </span>
+
+                    <strong>0</strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOLICITAÇÕES RECENTES -->
+            <section class="requests-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Solicitações recentes</h2>
+
+                        <p>
+                            Acompanhe as últimas solicitações registradas no sistema.
+                        </p>
+
+                    </div>
+
+                    <button type="button" class="filter-button">
+                        Filtrar
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>PACIENTE</th>
+
+                                <th>EXAME</th>
+
+                                <th>MÉDICO</th>
+
+                                <th>DATA</th>
+
+                                <th>STATUS</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>Nome do paciente</strong>
+                                </td>
+
+                                <td>
+                                    Exame solicitado
+                                </td>
+
+                                <td>
+                                    Dr. Nome
+                                </td>
+
+                                <td>
+                                    --/--/----
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pendente
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Nome do paciente</strong>
+                                </td>
+
+                                <td>
+                                    Exame solicitado
+                                </td>
+
+                                <td>
+                                    Dr. Nome
+                                </td>
+
+                                <td>
+                                    --/--/----
+                                </td>
+
+                                <td>
+                                    <span class="status progress">
+                                        Em análise
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Nome do paciente</strong>
+                                </td>
+
+                                <td>
+                                    Exame solicitado
+                                </td>
+
+                                <td>
+                                    Dr. Nome
+                                </td>
+
+                                <td>
+                                    --/--/----
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

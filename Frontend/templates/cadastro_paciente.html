@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Cadastro de Paciente</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item">
+                    Visão geral
+                </a>
+
+                <a href="#" class="menu-item active">
+                    Pacientes
+                </a>
+
+                <a href="#" class="menu-item">
+                    Solicitações
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                Sistema de Solicitação de Exames
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+
+                    <span class="page-label">
+                        PACIENTES
+                    </span>
+
+                    <h1>Cadastro de paciente</h1>
+
+                </div>
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        RC
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <strong>Recepcionista</strong>
+
+                        <span>Atendimento</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- FORMULÁRIO -->
+            <section class="form-card">
+
+                <div class="form-card-header">
+
+                    <h2>Dados do paciente</h2>
+
+                    <p>
+                        Preencha os dados abaixo para cadastrar um novo paciente.
+                    </p>
+
+                </div>
+
+
+                <form class="exam-form">
+
+                    <!-- NOME -->
+                    <div class="form-field">
+
+                        <label for="nome">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite o nome completo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CPF E DATA DE NASCIMENTO -->
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="cpf">
+                                CPF
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cpf"
+                                name="cpf"
+                                placeholder="000.000.000-00"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="dataNascimento">
+                                Data de nascimento
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dataNascimento"
+                                name="dataNascimento"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL E TELEFONE -->
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="paciente@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(00) 00000-0000"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AÇÕES -->
+                    <div class="form-actions">
+
+                        <a href="#" class="cancel-button">
+                            Cancelar
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Cadastrar paciente
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
