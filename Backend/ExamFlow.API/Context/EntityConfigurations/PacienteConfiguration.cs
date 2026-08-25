@@ -24,6 +24,8 @@ namespace ExamFlow.API.Data.Configurations
                 .IsUnique();
 
             builder.Property(p => p.DataNascimento)
+                .HasColumnName("data_nascimento")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(p => p.Genero)

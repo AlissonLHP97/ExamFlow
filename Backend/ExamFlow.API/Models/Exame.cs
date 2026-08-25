@@ -7,5 +7,6 @@
         public string Descricao { get; set; }
 
         public ICollection<ItemSolicitacaoExame> Itens { get; set; }
+        = new List<ItemSolicitacaoExame>();
     }
 }

@@ -8,6 +8,7 @@
         public string Senha { get; set; }
         public string Perfil { get; set; }
 
-        public ICollection<SolicitacaoExame>  Solicitacoes { get; set; } 
+        public ICollection<SolicitacaoExame>  Solicitacoes { get; set; }
+        = new List<SolicitacaoExame>();
     }
 }

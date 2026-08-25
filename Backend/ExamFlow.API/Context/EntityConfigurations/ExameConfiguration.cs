@@ -8,7 +8,7 @@ namespace ExamFlow.API.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Exame> builder)
         {
-            builder.ToTable("Exames");
+            builder.ToTable("Exame");
 
             builder.HasKey(e => e.Id);
 

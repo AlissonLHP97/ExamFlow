@@ -9,11 +9,19 @@ namespace ExamFlow.API.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<SolicitacaoExame> builder)
         {
-            builder.ToTable("SolicitacoesExame");
+            builder.ToTable("ExameSolicitacoes");
 
             builder.HasKey(s => s.Id);
 
+            builder.Property(s => s.PacienteId)
+                .HasColumnName("paciente_id");
+
+            builder.Property(s => s.UsuarioId)
+                .HasColumnName("usuario_id");
+
             builder.Property(s => s.DataSolicitacao)
+                .HasColumnName("data_solicitacao")
+                .HasColumnType("datetime")
                 .IsRequired();
 
             builder.Property(s => s.Status)

@@ -9,6 +9,7 @@
         public string Genero { get; set; }
         public string Telefone { get; set; }
 
-        public ICollection<SolicitacaoExame> Solicitacoes {  get; set; }
+        public ICollection<SolicitacaoExame> Solicitacoes { get; set; } 
+            = new List<SolicitacaoExame>();
     }
 }

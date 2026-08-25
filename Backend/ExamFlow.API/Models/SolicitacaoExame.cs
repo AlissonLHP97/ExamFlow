@@ -13,6 +13,7 @@
         public string Status { get; set; }
         public DateTime DataSolicitacao { get; set; }
 
-        public ICollection<ItemSolicitacaoExame> Itens { get; set; }
+        public ICollection<ItemSolicitacaoExame> Itens { get; set; } 
+            = new List<ItemSolicitacaoExame>();
     }
 }
