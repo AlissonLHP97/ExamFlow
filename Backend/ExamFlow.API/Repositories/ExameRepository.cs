@@ -14,6 +14,12 @@ namespace ExamFlow.API.Repositories
                 .AsNoTracking()
                 .ToListAsync();
         }
+        public async Task<Exame> CriarExame(Exame exame)
+        {
+            _context.Add(exame);
+            await _context.SaveChangesAsync();
 
+            return exame;
+        }
     }
 }

@@ -16,6 +16,13 @@ builder.Services.AddScoped<ExameService>();
 builder.Services.AddScoped<PacienteRepository>();
 builder.Services.AddScoped<PacienteService>();
 
+builder.Services.AddScoped<SolicitacaoExameRepository>();
+builder.Services.AddScoped<SolicitacaoExameService>();
+
+builder.Services.AddScoped<UsuarioRepository>();
+builder.Services.AddScoped<UsuarioService>();
+
+
 builder.Services.AddControllers();
 
 var app = builder.Build();

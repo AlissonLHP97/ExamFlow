@@ -11,5 +11,9 @@ namespace ExamFlow.API.Services
         {
             return await _repository.ObterTodosAsync();
         }
+        public async Task<Exame> CriarExame(Exame exame)
+        {
+            return await _repository.CriarExame(exame);
+        }
     }
 }

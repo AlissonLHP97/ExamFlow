@@ -17,5 +17,14 @@ namespace ExamFlow.API.Controllers
             
             return Ok(exames);
         }
+        [HttpPost]
+        public async Task<ActionResult<Exame>> CriarExame(Exame exame)
+        {
+            var exameCriado = await _service.CriarExame(exame);
+
+            if (exameCriado is null) return NotFound();
+
+            return Ok(exameCriado);
+        }
     }
 }
