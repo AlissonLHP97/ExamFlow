@@ -10,6 +10,14 @@ namespace ExamFlow.API.Services
     {
         private readonly SolicitacaoExameRepository _repository = repository;
 
+        public async Task<List<SolicitacaoExame>> ObterTodasSolicitacoes()
+        {
+            return await _repository.ObterTodasSolicitacoes();
+        }
+        public async Task<SolicitacaoExame?> ObterSolicitacaoPorId(int id)
+        {
+            return await _repository.ObterExamesPorId(id);
+        }
         public async Task<SolicitacaoExame> CriarSolicitacao(CriarSolicitacaoExameDTO dto)
         {
             var solicitacao = new SolicitacaoExame
@@ -30,13 +38,18 @@ namespace ExamFlow.API.Services
         {
             return await _repository.AtualizarStatusSolicitacao(id, dto.Status);
         }
-        public async Task<List<SolicitacaoExame>> ObterTodasSolicitacoes()
+        public async Task<ItemSolicitacaoExame?> AtualizarResultadoExame(
+            int solicitacaoId,
+            int exameId,
+            AtualizarResultadoExameDTO dto
+            )
         {
-            return await _repository.ObterTodasSolicitacoes();
-        }
-        public async Task<SolicitacaoExame?> ObterSolicitacaoPorId(int id)
-        {
-            return await _repository.ObterExamesPorId(id);
+            return await _repository.AtualizarResultadoExame(
+                solicitacaoId,
+                exameId,
+                dto.Resultado
+                );
         }
     }
+
 }

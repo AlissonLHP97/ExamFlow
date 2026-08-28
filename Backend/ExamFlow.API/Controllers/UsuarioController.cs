@@ -1,6 +1,6 @@
-﻿using ExamFlow.API.Models;
+﻿using ExamFlow.API.DTO.Auth;
+using ExamFlow.API.Models;
 using ExamFlow.API.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExamFlow.API.Controllers
@@ -10,6 +10,25 @@ namespace ExamFlow.API.Controllers
     public class UsuarioController(UsuarioService service) : ControllerBase
     {
         private readonly UsuarioService _service = service;
+
+        [HttpPost("login")]
+        public async Task<ActionResult<UsuarioresponseDTO>> Login(LoginDTO dto)
+        {
+            var usuario = await _service.Login(dto);
+
+            if (usuario is null) return Unauthorized("E-mail ou senha inválidos");
+
+            var response = new UsuarioresponseDTO
+            {
+                Id = usuario.Id,
+                Nome = usuario.Nome,
+                Email = usuario.Email,
+                Perfil = usuario.Perfil
+            };
+
+            return Ok(response);
+
+        }
 
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> ObterTodosUsuarios()

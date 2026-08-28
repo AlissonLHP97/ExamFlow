@@ -28,6 +28,13 @@ namespace ExamFlow.API.Data.Configurations
                 .WithMany(e => e.Itens)
                 .HasForeignKey(i => i.ExameId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(i => i.Resultado)
+                .HasColumnName("Resultado")
+                .HasMaxLength(1000);
+
+            builder.Property(d => d.DataResultado)
+                .HasColumnName("data_resultado");
         }
     }
 }

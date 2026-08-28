@@ -11,6 +11,7 @@ namespace ExamFlow.API.Context
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Exame> Exames {  get; set; }
         public DbSet<SolicitacaoExame> SolicitacaoExames { get; set; }
+        public DbSet<ItemSolicitacaoExame> ItensSolicitacaoExame { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

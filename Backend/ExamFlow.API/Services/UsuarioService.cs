@@ -1,4 +1,5 @@
-﻿using ExamFlow.API.Models;
+﻿using ExamFlow.API.DTO.Auth;
+using ExamFlow.API.Models;
 using ExamFlow.API.Repositories;
 
 namespace ExamFlow.API.Services
@@ -6,6 +7,17 @@ namespace ExamFlow.API.Services
     public class UsuarioService(UsuarioRepository repository)
     {
         private readonly UsuarioRepository _repository = repository;
+
+        public async Task<Usuario?> Login(LoginDTO dto)
+        {
+            var usuario = await _repository.ObterUsuarioPorEmail(dto.Email);
+
+            if (usuario is null) return null;
+
+            if (usuario.Senha != dto.Senha) return null;
+
+            return usuario;
+        }
 
         public async Task<List<Usuario>> ObterTodosUsuarios()
         {
