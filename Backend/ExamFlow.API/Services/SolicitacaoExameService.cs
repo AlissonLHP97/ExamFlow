@@ -34,7 +34,7 @@ namespace ExamFlow.API.Services
             };
             return await _repository.CriarSolicitacao(solicitacao);
         }
-        public async Task<SolicitacaoExame> AtualizarStatusSolicitacao(int id, AtualizarCadastroDeSolicitacaoDTO dto)
+        public async Task<SolicitacaoExame> AtualizarStatusSolicitacao(int id, AtualizarStatusDeSolicitacaoDTO dto)
         {
             return await _repository.AtualizarStatusSolicitacao(id, dto.Status);
         }

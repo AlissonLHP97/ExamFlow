@@ -2,7 +2,7 @@
 
 namespace ExamFlow.API.DTO.Update
 {
-    public class AtualizarCadastroDeSolicitacaoDTO
+    public class AtualizarStatusDeSolicitacaoDTO
     {
         public StatusSolicitacao Status { get; set; }
     }

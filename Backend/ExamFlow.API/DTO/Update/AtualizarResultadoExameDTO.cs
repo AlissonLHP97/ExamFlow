@@ -1,7 +1,10 @@
-﻿namespace ExamFlow.API.DTO.Update
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ExamFlow.API.DTO.Update
 {
     public class AtualizarResultadoExameDTO
     {
-        public string? Resultado { get; set; }
+        [Required]
+        public string Resultado { get; set; }
     }
 }

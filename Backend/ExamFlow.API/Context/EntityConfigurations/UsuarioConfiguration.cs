@@ -28,6 +28,7 @@ namespace ExamFlow.API.Data.Configurations
                 .IsRequired();
 
             builder.Property(u => u.Perfil)
+                .HasConversion<string>()
                 .HasMaxLength(30)
                 .IsRequired();
         }

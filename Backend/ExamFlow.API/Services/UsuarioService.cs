@@ -1,4 +1,5 @@
 ﻿using ExamFlow.API.DTO.Auth;
+using ExamFlow.API.Enums;
 using ExamFlow.API.Models;
 using ExamFlow.API.Repositories;
 
@@ -33,6 +34,8 @@ namespace ExamFlow.API.Services
         }
         public async Task<Usuario> CriarUsuario(Usuario usuario)
         {
+            if (!Enum.IsDefined(typeof(PerfilUsuario), usuario.Perfil)) throw new ArgumentException("Perfil de usuário inválido");
+
             var usuarioExistente = await _repository.ObterUsuarioPorEmail(usuario.Email);
 
             if (usuarioExistente is not null)

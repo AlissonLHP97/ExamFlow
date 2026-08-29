@@ -1,4 +1,6 @@
-﻿namespace ExamFlow.API.Models
+﻿using ExamFlow.API.Enums;
+
+namespace ExamFlow.API.Models
 {
     public class Usuario
     {
@@ -6,7 +8,7 @@
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public string Perfil { get; set; }
+        public PerfilUsuario Perfil { get; set; }
 
         public ICollection<SolicitacaoExame>  Solicitacoes { get; set; }
         = new List<SolicitacaoExame>();

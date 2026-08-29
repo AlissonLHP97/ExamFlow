@@ -43,19 +43,47 @@ namespace ExamFlow.API.Controllers
             return Ok(response);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<SolicitacaoExame>> ObterSolicitacaoPorId(int id)
+        public async Task<ActionResult<SolicitacaoExameResponseDTO>> ObterSolicitacaoPorId(int id)
         {
             var solicitacao = await _service.ObterSolicitacaoPorId(id);
 
             if (solicitacao is null) return NotFound();
 
-            return Ok(solicitacao);
+            var response = new SolicitacaoExameResponseDTO
+            {
+                Id = solicitacao.Id,
+
+                PacienteId = solicitacao.PacienteId,
+                PacienteNome = solicitacao.Paciente.Nome,
+
+                UsuarioId = solicitacao.UsuarioId,
+                UsuarioNome = solicitacao.Usuario.Nome,
+
+                Status = solicitacao.Status,
+                DataSolicitacao = solicitacao.DataSolicitacao,
+
+                Exames = solicitacao.Itens.Select(i =>
+                new ExameSolicitadoResponseDTO
+                {
+                    Id = i.Exame.Id,
+                    Nome = i.Exame.Nome,
+                    Resultado = i.Resultado,
+                    DataResultado = i.DataResultado
+                }).ToList()
+
+            };
+
+            return Ok(response);
         }
         [HttpPost]
         public async Task<ActionResult<SolicitacaoExameResponseDTO>> CriarSolicitacao(CriarSolicitacaoExameDTO dto)
         {
-            var solicitacao = await _service.CriarSolicitacao(dto);
+            var solicitacaoCriada = await _service.CriarSolicitacao(dto);
 
+            var solicitacao = await _service.ObterSolicitacaoPorId(solicitacaoCriada.Id);
+
+            if (solicitacao is null) return NotFound();
+            
             var response = new SolicitacaoExameResponseDTO
             {
                 Id = solicitacao.Id,
@@ -72,7 +100,7 @@ namespace ExamFlow.API.Controllers
                 Exames = solicitacao.Itens.Select(i => 
                 new ExameSolicitadoResponseDTO
                 {
-                    Id = i.Id,
+                    Id = i.Exame.Id,
                     Nome = i.Exame.Nome,
                     Resultado = i.Resultado,
                     DataResultado = i.DataResultado
@@ -86,7 +114,7 @@ namespace ExamFlow.API.Controllers
                 );
         }
         [HttpPut("{id}/status")]
-        public async Task<ActionResult<SolicitacaoExame>> AtualizarStatusSolicitacao(int id, AtualizarCadastroDeSolicitacaoDTO dto)
+        public async Task<ActionResult<SolicitacaoExame>> AtualizarStatusSolicitacao(int id, AtualizarStatusDeSolicitacaoDTO dto)
         {
             var solicitacao = await _service.AtualizarStatusSolicitacao(id, dto);
 
