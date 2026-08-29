@@ -22,12 +22,22 @@ namespace ExamFlow.API.Controllers
             {
                 Id = s.Id,
                 PacienteId = s.PacienteId,
+
+                PacienteNome = s.Paciente.Nome,
                 UsuarioId = s.UsuarioId,
+                UsuarioNome = s.Usuario.Nome,
+
                 Status = s.Status,
                 DataSolicitacao = s.DataSolicitacao,
-                ExameIds = s.Itens
-            .Select(i => i.ExameId)
-            .ToList()
+                Exames = s.Itens.Select(i => 
+                new ExameSolicitadoResponseDTO
+                {
+                    Id = i.ExameId,
+                    Nome = i.Exame.Nome,
+                    Resultado = i.Resultado,
+                    DataResultado = i.DataResultado
+                }).ToList()
+
             }).ToList();
 
             return Ok(response);
@@ -49,13 +59,24 @@ namespace ExamFlow.API.Controllers
             var response = new SolicitacaoExameResponseDTO
             {
                 Id = solicitacao.Id,
+
                 PacienteId = solicitacao.PacienteId,
+                PacienteNome = solicitacao.Paciente.Nome,
+
                 UsuarioId = solicitacao.UsuarioId,
+                UsuarioNome = solicitacao.Usuario.Nome,
+
                 Status = solicitacao.Status,
                 DataSolicitacao = solicitacao.DataSolicitacao,
-                ExameIds = solicitacao.Itens
-            .Select(i => i.ExameId)
-            .ToList()
+
+                Exames = solicitacao.Itens.Select(i => 
+                new ExameSolicitadoResponseDTO
+                {
+                    Id = i.Id,
+                    Nome = i.Exame.Nome,
+                    Resultado = i.Resultado,
+                    DataResultado = i.DataResultado
+                }).ToList()
             };
 
             return CreatedAtAction(
