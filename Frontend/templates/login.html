@@ -1,101 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ExamFlow | Login</title>
 
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <main class="login-container">
+      <section class="login-brand">
+        <div class="brand-content">
+          <div class="brand-icon">E</div>
 
-        <section class="login-brand">
-            <div class="brand-content">
-                <div class="brand-icon">E</div>
+          <h1>ExamFlow</h1>
 
-                <h1>ExamFlow</h1>
+          <p>
+            Solicitação e acompanhamento de exames hospitalares de forma simples
+            e segura.
+          </p>
+        </div>
+      </section>
 
-                <p>
-                    Solicitação e acompanhamento de exames
-                    hospitalares de forma simples e segura.
-                </p>
-            </div>
-        </section>
+      <section class="login-form-container">
+        <div class="login-form">
+          <div class="mobile-logo">
+            <div class="brand-icon">E</div>
+            <span>ExamFlow</span>
+          </div>
 
+          <span class="welcome">Bem-vindo de volta</span>
 
-        <section class="login-form-container">
+          <h2>Acesse sua conta</h2>
 
-            <div class="login-form">
+          <p class="subtitle">Entre para acompanhar suas solicitações.</p>
 
-                <div class="mobile-logo">
-                    <div class="brand-icon">E</div>
-                    <span>ExamFlow</span>
-                </div>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="email">E-mail</label>
 
-                <span class="welcome">Bem-vindo de volta</span>
-
-                <h2>Acesse sua conta</h2>
-
-                <p class="subtitle">
-                    Entre para acompanhar suas solicitações.
-                </p>
-
-
-                <form>
-
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="seu@email.com"
-                            required
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                        <div class="password-label">
-                            <label for="password">Senha</label>
-
-                            <a href="#">Esqueci minha senha</a>
-                        </div>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Digite sua senha"
-                            required
-                        >
-                    </div>
-
-
-                    <button type="submit" class="login-button">
-                        Entrar
-                    </button>
-
-                </form>
-
-
-                <p class="security-text">
-                    Seus dados são protegidos e utilizados apenas
-                    para o funcionamento do sistema.
-                </p>
-
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                required />
             </div>
 
-        </section>
+            <div class="form-group">
+              <div class="password-label">
+                <label for="password">Senha</label>
 
+                <a href="#">Esqueci minha senha</a>
+              </div>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required />
+            </div>
+
+            <button type="submit" class="login-button">Entrar</button>
+          </form>
+
+          <p class="security-text">
+            Seus dados são protegidos e utilizados apenas para o funcionamento
+            do sistema.
+          </p>
+        </div>
+      </section>
     </main>
-
-</body>
-
+    <script src="/static/login.js"></script>
+  </body>
 </html>
