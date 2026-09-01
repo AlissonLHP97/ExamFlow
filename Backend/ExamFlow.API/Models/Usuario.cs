@@ -10,6 +10,8 @@ namespace ExamFlow.API.Models
         public string Senha { get; set; }
         public PerfilUsuario Perfil { get; set; }
 
+        public Paciente? Paciente { get; set; }
+
         public ICollection<SolicitacaoExame>  Solicitacoes { get; set; }
         = new List<SolicitacaoExame>();
     }

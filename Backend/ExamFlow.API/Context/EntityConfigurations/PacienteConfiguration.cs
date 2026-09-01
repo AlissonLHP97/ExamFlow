@@ -10,7 +10,7 @@ namespace ExamFlow.API.Data.Configurations
         {
             builder.ToTable("Pacientes");
 
-            builder.HasKey(p => p.Id);
+            builder.HasKey(p => p.Id);                          
 
             builder.Property(p => p.Nome)
                 .HasMaxLength(100)
@@ -34,6 +34,16 @@ namespace ExamFlow.API.Data.Configurations
 
             builder.Property(p => p.Telefone)
                 .HasMaxLength(20);
+
+            builder.HasIndex(u => u.UsuarioId)
+                .IsUnique();
+
+            builder
+                .HasOne(p => p.Usuario)
+                .WithOne(u => u.Paciente)
+                .HasForeignKey<Paciente>(p => p.UsuarioId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
         }
     }
 }

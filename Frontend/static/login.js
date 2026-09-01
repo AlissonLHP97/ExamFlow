@@ -16,22 +16,36 @@ form.addEventListener("submit", async function (event) {
       senha: senha,
     }),
   });
-
-  const data = await response.json();
-
-  if (response.ok) {
-    localStorage.setItem("usuarioId", data.id);
-    localStorage.setItem("usuarioNome", data.nome);
-    localStorage.setItem("usuarioPerfil", data.perfil);
-
-    if (data.perfil === "Medico") {
-      window.location.href = "medico.html";
-    } else if (data.perfil === "Laboratorio") {
-      window.location.href = "laboratorio.html";
-    }
-  }
   if (!response.ok) {
     alert("E-mail ou senha inválidos.");
     return;
+  }
+
+  const data = await response.json();
+
+  localStorage.setItem("usuarioId", data.id);
+  localStorage.setItem("usuarioNome", data.nome);
+  localStorage.setItem("usuarioPerfil", data.perfil);
+
+  switch (data.perfil) {
+    case "Administrador":
+      window.location.href = "admin.html";
+      break;
+    case "Laboratorio":
+      window.location.href = "laboratorio.html";
+      break;
+    case "Medico":
+      window.location.href = "medico.html";
+      break;
+    case "Paciente":
+      window.location.href = "paciente.html";
+    break;
+    case "Recepcionista":
+      window.location.href = "recepcionista.html";
+      break;
+
+    default:
+      alert("Perfil de usuário não reconhecido.");
+      break;
   }
 });
