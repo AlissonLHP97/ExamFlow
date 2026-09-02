@@ -24,7 +24,7 @@ namespace ExamFlow.API.Services
             {
                 PacienteId = dto.PacienteId,
                 UsuarioId = dto.UsuarioId,
-                Status = StatusSolicitacao.EmAndamento,
+                Status = StatusSolicitacao.Solicitado,
                 DataSolicitacao = DateTime.Now,
                 Itens = dto.ExameIds.Select(exameId =>
                 new ItemSolicitacaoExame
@@ -39,16 +39,42 @@ namespace ExamFlow.API.Services
             return await _repository.AtualizarStatusSolicitacao(id, dto.Status);
         }
         public async Task<ItemSolicitacaoExame?> AtualizarResultadoExame(
-            int solicitacaoId,
-            int exameId,
-            AtualizarResultadoExameDTO dto
-            )
+    int solicitacaoId,
+    int exameId,
+    AtualizarResultadoExameDTO dto
+)
         {
-            return await _repository.AtualizarResultadoExame(
+            // Salva o resultado do exame
+            var item = await _repository.AtualizarResultadoExame(
                 solicitacaoId,
                 exameId,
                 dto.Resultado
-                );
+            );
+
+            if (item is null)
+                return null;
+
+            // Busca a solicitação com todos os exames
+            var solicitacao = await _repository.ObterExamesPorId(solicitacaoId);
+
+            if (solicitacao is null)
+                return null;
+
+            // Verifica se todos os exames já possuem resultado
+            var todosComResultado = solicitacao.Itens
+                .All(i => !string.IsNullOrWhiteSpace(i.Resultado));
+
+            // Define automaticamente o status
+            var novoStatus = todosComResultado
+                ? StatusSolicitacao.LaudoDisponivel
+                : StatusSolicitacao.EmAndamento;
+
+            await _repository.AtualizarStatusSolicitacao(
+                solicitacaoId,
+                novoStatus
+            );
+
+            return item;
         }
     }
 

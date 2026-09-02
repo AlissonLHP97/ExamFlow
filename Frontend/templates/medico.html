@@ -7,6 +7,9 @@
     <title>ExamFlow | Dashboard</title>
 
     <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
   </head>
 
   <body>
@@ -63,7 +66,12 @@
             </p>
           </div>
 
-          <button class="primary-button">+ Nova solicitação</button>
+          <button
+            class="primary-button"
+            data-bs-toggle="modal"
+            data-bs-target="#modalNovaSolicitacao">
+            + Nova solicitação
+          </button>
         </section>
 
         <!-- CARDS -->
@@ -104,6 +112,7 @@
                   <th>Exames</th>
                   <th>Data</th>
                   <th>Status</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
 
@@ -113,6 +122,76 @@
         </section>
       </main>
     </div>
+    <div class="modal fade" id="modalDetalhes" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5">Detalhes da solicitação</h2>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body" id="detalhes-solicitacao"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalNovaSolicitacao"
+      tabindex="-1"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5">Nova solicitação</h2>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="paciente" class="form-label"> Paciente </label>
+
+              <select id="paciente" class="form-select">
+                <option value="">Selecione um paciente</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label"> Exames </label>
+
+              <div id="lista-exames">
+                <p class="text-muted">Os exames serão carregados aqui.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-criar-solicitacao">
+              Criar solicitação
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/medico.js"></script>
     <script src="/static/medico.js"></script>
   </body>
 </html>
