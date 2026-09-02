@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamFlow | Recepção</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">E</div>
+                <span>ExamFlow</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="recepcao.html" class="menu-item active">
+                    Dashboard
+                </a>
+
+                <a href="cadastro paciente.html" class="menu-item">
+                    Pacientes
+                </a>
+
+                <a href="#" class="menu-item">
+                    Solicitações
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <span>Recepção</span>
+                <small>Atendimento</small>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- TOPO -->
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">PAINEL DA RECEPÇÃO</span>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        R
+                    </div>
+
+                    <div class="doctor-info">
+                        <strong>Recepção</strong>
+                        <span>Atendimento</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+            <div class="welcome-section">
+
+                <div>
+                    <h2>Olá, recepção!</h2>
+
+                    <p>
+                        Gerencie o cadastro de pacientes e acompanhe
+                        as solicitações de exames.
+                    </p>
+                </div>
+
+                <a href="cadastro paciente.html" class="primary-button">
+                    + Cadastrar paciente
+                </a>
+
+            </div>
+
+
+            <!-- CARDS -->
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Pacientes cadastrados
+                    </span>
+
+                    <strong id="total-pacientes">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Solicitações hoje
+                    </span>
+
+                    <strong>
+                        08
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Solicitações pendentes
+                    </span>
+
+                    <strong>
+                        04
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PACIENTES -->
+            <section class="requests-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Pacientes</h2>
+
+                        <p>
+                            Consulte e encontre pacientes cadastrados no sistema.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- BUSCA DE PACIENTES -->
+                <div class="patient-search">
+
+                    <input
+                        type="text"
+                        id="buscar-paciente"
+                        placeholder="Buscar por nome, CPF ou telefone..."
+                    >
+
+                </div>
+
+
+                <!-- TABELA DE PACIENTES -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>PACIENTE</th>
+                                <th>CPF</th>
+                                <th>DATA DE NASCIMENTO</th>
+                                <th>TELEFONE</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="lista-pacientes">
+
+                            <tr>
+                                <td colspan="4">
+                                    Carregando pacientes...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOLICITAÇÕES RECENTES -->
+            <section class="requests-section" style="margin-top: 25px;">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Solicitações recentes</h2>
+
+                        <p>
+                            Acompanhe as solicitações de exames dos pacientes.
+                        </p>
+                    </div>
+
+                    <button class="filter-button" type="button">
+                        Filtrar
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>PACIENTE</th>
+                                <th>EXAME</th>
+                                <th>MÉDICO</th>
+                                <th>DATA</th>
+                                <th>STATUS</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <strong>Maria Oliveira</strong>
+                                </td>
+
+                                <td>
+                                    Hemograma completo
+                                </td>
+
+                                <td>
+                                    Dr. Carlos
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pendente
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>João Santos</strong>
+                                </td>
+
+                                <td>
+                                    Raio-X de tórax
+                                </td>
+
+                                <td>
+                                    Dra. Mariana
+                                </td>
+
+                                <td>
+                                    19/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status progress">
+                                        Em andamento
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>Ana Costa</strong>
+                                </td>
+
+                                <td>
+                                    Ultrassonografia
+                                </td>
+
+                                <td>
+                                    Dr. Carlos
+                                </td>
+
+                                <td>
+                                    18/08/2026
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Concluído
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT DA RECEPÇÃO -->
+    <script src="../static/recepcao.js"></script>
+
+</body>
+
+</html>
