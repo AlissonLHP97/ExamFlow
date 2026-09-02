@@ -1271,3 +1271,21 @@ td strong {
         text-align: center;
     }
 }
+
+.patient-search {
+    margin-bottom: 20px;
+}
+
+.patient-search input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9e3e5;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #344b55;
+    outline: none;
+}
+
+.patient-search input:focus {
+    border-color: #3aa99b;
+}
