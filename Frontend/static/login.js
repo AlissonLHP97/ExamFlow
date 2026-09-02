@@ -16,6 +16,7 @@ form.addEventListener("submit", async function (event) {
       senha: senha,
     }),
   });
+
   if (!response.ok) {
     alert("E-mail ou senha inválidos.");
     return;
@@ -31,16 +32,23 @@ form.addEventListener("submit", async function (event) {
     case "Administrador":
       window.location.href = "admin.html";
       break;
+
     case "Laboratorio":
       window.location.href = "laboratorio.html";
       break;
+
     case "Medico":
       window.location.href = "medico.html";
       break;
+
     case "Paciente":
       window.location.href = "paciente.html";
-    break;    
-    
+      break;
+
+    case "Recepcionista":
+      window.location.href = "recepcao.html";
+      break;
+
     default:
       alert("Perfil de usuário não reconhecido.");
       break;
