@@ -39,11 +39,8 @@ form.addEventListener("submit", async function (event) {
       break;
     case "Paciente":
       window.location.href = "paciente.html";
-    break;
-    case "Recepcionista":
-      window.location.href = "recepcionista.html";
-      break;
-
+    break;    
+    
     default:
       alert("Perfil de usuário não reconhecido.");
       break;

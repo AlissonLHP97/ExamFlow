@@ -35,6 +35,9 @@ namespace ExamFlow.API.Data.Configurations
             builder.Property(p => p.Telefone)
                 .HasMaxLength(20);
 
+            builder.Property(u => u.UsuarioId)
+                .HasColumnName("usuario_id");
+
             builder.HasIndex(u => u.UsuarioId)
                 .IsUnique();
 

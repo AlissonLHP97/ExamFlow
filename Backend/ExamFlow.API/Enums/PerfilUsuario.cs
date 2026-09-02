@@ -4,7 +4,7 @@
     {
         Administrador,
         Medico,
-        Recepcionista,
+        Paciente,
         Laboratorio
 
     }
