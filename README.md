@@ -75,4 +75,3 @@ Após a compilação, o teu navegador irá abrir automaticamente a interface do 
 * **Ambiente de Frontend:** Ecossistema Node.js / NPM
 
 ---
-Este projeto foi clonado e adaptado a partir do repositório público [AlissonLHP97/ExamFlow](https://github.com/AlissonLHP97/ExamFlow.git).
