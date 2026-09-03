@@ -2,6 +2,8 @@ const API_URL = "https://localhost:7113/api/solicitacaoexames";
 const PACIENTES_API_URL = "https://localhost:7113/api/paciente";
 const EXAMES_API_URL = "https://localhost:7113/api/exame";
 
+let solicitacoesMedico = [];
+
 // CARREGAR DASHBOARD
 async function carregarSolicitacoes() {
   try {
@@ -13,8 +15,14 @@ async function carregarSolicitacoes() {
 
     const solicitacoes = await response.json();
 
-    atualizarCards(solicitacoes);
-    renderizarSolicitacoes(solicitacoes);
+    const usuarioId = Number(localStorage.getItem("usuarioId"));
+
+    solicitacoesMedico = solicitacoes.filter(
+      (solicitacao) => solicitacao.usuarioId === usuarioId,
+    );
+
+    atualizarCards(solicitacoesMedico);
+    renderizarSolicitacoes(solicitacoesMedico);
   } catch (erro) {
     console.error("Erro ao carregar solicitações:", erro);
   }
@@ -110,8 +118,21 @@ function obterClasseStatus(status) {
   }
 }
 
-// VER DETALHES
+// FILTRAR SOLICITAÇÕES
+function filtrarSolicitacoes(status) {
+  if (status === "Todos") {
+    renderizarSolicitacoes(solicitacoesMedico);
+    return;
+  }
 
+  const solicitacoesFiltradas = solicitacoesMedico.filter(
+    (solicitacao) => solicitacao.status === status,
+  );
+
+  renderizarSolicitacoes(solicitacoesFiltradas);
+}
+
+// VER DETALHES
 async function verDetalhes(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`);
@@ -189,7 +210,8 @@ async function verDetalhes(id) {
     console.error("Erro ao carregar detalhes:", erro);
   }
 }
-// Carrega os pacientes cadastrados na API e preenche o campo de seleção em ordem alfabética.
+
+// CARREGAR PACIENTES
 async function carregarPacientes() {
   try {
     const response = await fetch(PACIENTES_API_URL);
@@ -207,6 +229,7 @@ async function carregarPacientes() {
         Selecione um paciente
       </option>
     `;
+
     pacientes.sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
 
     pacientes.forEach((paciente) => {
@@ -221,7 +244,8 @@ async function carregarPacientes() {
     console.error("Erro ao carregar pacientes:", erro);
   }
 }
-// Carrega os exames cadastrados na API e exibe as opções.
+
+// CARREGAR EXAMES
 async function carregarExames() {
   try {
     const response = await fetch(EXAMES_API_URL);
@@ -235,6 +259,8 @@ async function carregarExames() {
     const listaExames = document.getElementById("lista-exames");
 
     listaExames.innerHTML = "";
+
+    exames.sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
 
     exames.forEach((exame) => {
       const div = document.createElement("div");
@@ -262,7 +288,8 @@ async function carregarExames() {
     console.error("Erro ao carregar exames:", erro);
   }
 }
-//Cria uma nova solicitação.
+
+// CRIAR NOVA SOLICITAÇÃO
 async function criarSolicitacao() {
   try {
     const pacienteId = Number(document.getElementById("paciente").value);
@@ -320,15 +347,41 @@ async function criarSolicitacao() {
     });
 
     await carregarSolicitacoes();
-    carregarSolicitacoes();
   } catch (erro) {
     console.error("Erro ao criar solicitação:", erro);
   }
 }
+
+// EXIBIR USUÁRIO LOGADO
+function carregarUsuarioLogado() {
+  const nome = localStorage.getItem("usuarioNome");
+
+  const perfil = localStorage.getItem("usuarioPerfil");
+
+  if (!nome || !perfil) {
+    return;
+  }
+
+  document.getElementById("nome-medico").textContent = nome;
+
+  document.getElementById("inicial-medico").textContent = nome
+    .charAt(0)
+    .toUpperCase();
+
+  document.getElementById("boasvindas-medico").textContent = nome;
+}
+
+// EVENTOS
 document
   .getElementById("btn-criar-solicitacao")
   .addEventListener("click", criarSolicitacao);
+
+document.getElementById("filtro-status").addEventListener("change", (event) => {
+  filtrarSolicitacoes(event.target.value);
+});
+
 // INICIAR DASHBOARD
 carregarSolicitacoes();
 carregarPacientes();
 carregarExames();
+carregarUsuarioLogado();
