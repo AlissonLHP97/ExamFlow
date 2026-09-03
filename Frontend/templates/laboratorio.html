@@ -7,6 +7,9 @@
     <title>ExamFlow | Laboratório</title>
 
     <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
   </head>
 
   <body>
@@ -19,16 +22,16 @@
         </div>
 
         <nav class="sidebar-menu">
-          <a href="#" class="menu-item active"> Dashboard </a>
+          <a href="#dashboard" class="menu-item active"> Dashboard </a>
 
-          <a href="#" class="menu-item"> Solicitações </a>
+          <a href="#solicitacoes" class="menu-item"> Solicitações </a>
         </nav>
 
         <div class="sidebar-footer">Sistema de exames</div>
       </aside>
 
       <!-- CONTEÚDO PRINCIPAL -->
-      <main class="main-content">
+      <main class="main-content" id="dashboard">
         <header class="topbar">
           <div>
             <span class="page-label">PAINEL DO LABORATÓRIO</span>
@@ -36,11 +39,10 @@
           </div>
 
           <div class="doctor-profile">
-            <div class="doctor-avatar">L</div>
-
+            <div class="doctor-avatar" id="inicial-laboratorio">L</div>
             <div class="doctor-info">
-              <strong>Laboratório Central</strong>
-              <span>Técnico de laboratório</span>
+              <strong id="nome-laboratorio">Laboratório Central</strong>
+              <span id="perfil-laboratorio">Técnico de laboratório</span>
             </div>
           </div>
         </header>
@@ -67,7 +69,7 @@
         </section>
 
         <!-- SOLICITAÇÕES -->
-        <section class="requests-section">
+        <section class="requests-section" id="solicitacoes">
           <div class="section-header">
             <div>
               <h2>Solicitações recebidas</h2>
@@ -75,7 +77,12 @@
               <p>Exames enviados pelos médicos</p>
             </div>
 
-            <button class="filter-button">Filtrar</button>
+            <select id="filtro-status" class="filter-button">
+              <option value="Todos">Todos</option>
+              <option value="Solicitado">Solicitado</option>
+              <option value="EmAndamento">Em andamento</option>
+              <option value="LaudoDisponivel">Concluído</option>
+            </select>
           </div>
 
           <div class="table-container">
@@ -91,74 +98,31 @@
                 </tr>
               </thead>
 
-              <tbody id="solicitacoes-laboratorio">
-                <tr>
-                  <td>
-                    <strong>Maria Oliveira</strong>
-                  </td>
-
-                  <td>Hemograma completo</td>
-
-                  <td>Dr. Carlos Henrique</td>
-
-                  <td>19/08/2026</td>
-
-                  <td>
-                    <span class="status pending"> Solicitado </span>
-                  </td>
-
-                  <td>
-                    <button class="action-button">Iniciar</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <strong>João Santos</strong>
-                  </td>
-
-                  <td>Raio-X de tórax</td>
-
-                  <td>Dra. Mariana Costa</td>
-
-                  <td>19/08/2026</td>
-
-                  <td>
-                    <span class="status andamento"> Em andamento </span>
-                  </td>
-
-                  <td>
-                    <button class="action-button">Concluir</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <strong>Ana Costa</strong>
-                  </td>
-
-                  <td>Ultrassonografia</td>
-
-                  <td>Dr. Carlos Henrique</td>
-
-                  <td>18/08/2026</td>
-
-                  <td>
-                    <span class="status completed"> Concluído </span>
-                  </td>
-
-                  <td>
-                    <button class="action-button disabled" disabled>
-                      Concluído
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="solicitacoes-laboratorio"></tbody>
             </table>
           </div>
         </section>
       </main>
     </div>
+    <!-- MODAL DA SOLICITAÇÃO -->
+    <div class="modal fade" id="modalSolicitacao" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5">Solicitação de exames</h2>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body" id="detalhes-solicitacao-laboratorio"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/laboratorio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/static/laboratorio.js"></script>
   </body>
 </html>
