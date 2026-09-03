@@ -27,6 +27,15 @@ namespace ExamFlow.API.Controllers
 
             return Ok(paciente);
         }
+        [HttpGet("usuario/{usuarioId}")]
+        public async Task<ActionResult<Paciente>> ObterPacientePorUsuarioId(int usuarioId)
+        {
+            var paciente = await _service.ObterPacientePorUsuarioId(usuarioId);
+
+            if(paciente is null) return NotFound();
+
+            return Ok(paciente);
+        }
         [HttpPost]
         public async Task<ActionResult<Paciente>> CriarPaciente(Paciente paciente)
         {

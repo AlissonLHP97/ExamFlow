@@ -1,268 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ExamFlow | Laudo</title>
 
-    <link rel="stylesheet"
-          href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="dashboard">
+      <!-- MENU -->
 
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-icon">E</div>
 
-        <!-- MENU -->
+          <span>ExamFlow</span>
+        </div>
 
-        <aside class="sidebar">
+        <nav class="sidebar-menu">
+          <a href="paciente.html" class="menu-item"> Meus exames </a>
 
-            <div class="sidebar-brand">
+          <a href="#" class="menu-item active"> Laudo </a>
+        </nav>
 
-                <div class="brand-icon">
-                    E
-                </div>
+        <div class="sidebar-footer">Sistema de exames</div>
+      </aside>
 
-                <span>ExamFlow</span>
+      <!-- CONTEÚDO -->
 
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <span class="page-label"> RESULTADO DO EXAME </span>
+
+            <h1>Laudo do exame</h1>
+          </div>
+
+          <div class="doctor-profile">
+            <div class="doctor-avatar" id="inicial-paciente-laudo">P</div>
+
+            <div class="doctor-info">
+              <strong id="nome-paciente-laudo"> Paciente </strong>
+
+              <span> Paciente </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- LAUDO -->
+
+        <section class="report-card">
+          <div class="report-header">
+            <div>
+              <span class="exam-label"> EXAME CONCLUÍDO </span>
+
+              <h2>Exames realizados</h2>
             </div>
 
+            <span class="status completed"> Concluído </span>
+          </div>
 
-            <nav class="sidebar-menu">
+          <!-- INFORMAÇÕES -->
 
-                <a href="paciente.html"
-                   class="menu-item">
+          <div class="report-info">
+            <div>
+              <span> Paciente </span>
 
-                    Meus exames
-
-                </a>
-
-                <a href="#"
-                   class="menu-item active">
-
-                    Laudo
-
-                </a>
-
-            </nav>
-
-
-            <div class="sidebar-footer">
-
-                Sistema de exames
-
+              <strong id="paciente-laudo"> Paciente </strong>
             </div>
 
-        </aside>
-
-
-        <!-- CONTEÚDO -->
-
-        <main class="main-content">
-
-
-            <header class="topbar">
-
-                <div>
-
-                    <span class="page-label">
-                        RESULTADO DO EXAME
-                    </span>
-
-                    <h1>Laudo do exame</h1>
-
-                </div>
-
-
-                <div class="doctor-profile">
-
-                    <div class="doctor-avatar">
-                        M
-                    </div>
-
-                    <div class="doctor-info">
-
-                        <strong>
-                            Maria Oliveira
-                        </strong>
-
-                        <span>
-                            Paciente
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </header>
-
-
-            <!-- LAUDO -->
-
-            <section class="report-card">
-
-
-                <div class="report-header">
-
-                    <div>
-
-                        <span class="exam-label">
-                            EXAME CONCLUÍDO
-                        </span>
-
-                        <h2>
-                            Ultrassonografia
-                        </h2>
-
-                    </div>
-
-
-                    <span class="status completed">
-                        Concluído
-                    </span>
-
-                </div>
-
-
-                <!-- INFORMAÇÕES -->
-
-                <div class="report-info">
-
-                    <div>
-
-                        <span>
-                            Paciente
-                        </span>
-
-                        <strong>
-                            Maria Oliveira
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Data do exame
-                        </span>
-
-                        <strong>
-                            10/08/2026
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Médico solicitante
-                        </span>
-
-                        <strong>
-                            Dra. Mariana Costa
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RESULTADO -->
-
-                <div class="report-section">
-
-                    <h3>
-                        Resultado
-                    </h3>
-
-                    <p>
-
-                        Exame realizado conforme solicitação
-                        médica. As estruturas avaliadas apresentam
-                        características dentro dos parâmetros
-                        esperados para o exame realizado.
-
-                    </p>
-
-                </div>
-
-
-                <!-- CONCLUSÃO -->
-
-                <div class="report-section">
-
-                    <h3>
-                        Conclusão
-                    </h3>
-
-                    <p>
-
-                        Não foram observadas alterações
-                        significativas no exame apresentado.
-
-                    </p>
-
-                </div>
-
-
-                <!-- RESPONSÁVEL -->
-
-                <div class="report-footer">
-
-                    <div>
-
-                        <span>
-                            Responsável pelo laudo
-                        </span>
-
-                        <strong>
-                            Dr. João da Silva
-                        </strong>
-
-                        <small>
-                            CRM XXXXX
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="report-actions">
-
-                    <a href="paciente.html"
-                       class="secondary-button">
-
-                        ← Voltar para meus exames
-
-                    </a>
-
-                    <button
-                        class="primary-button"
-                        onclick="window.print()">
-
-                        Imprimir laudo
-
-                    </button>
-
-                </div>
-
-
-            </section>
-
-        </main>
-
+            <div>
+              <span> Data da solicitação </span>
+
+              <strong id="data-exame">-</strong>
+            </div>
+
+            <div>
+              <span> Médico solicitante </span>
+
+              <strong id="medico-laudo">Médico</strong>
+            </div>
+          </div>
+
+          <!-- RESULTADO -->
+
+          <div class="report-section">
+            <h3>Resultados</h3>
+
+            <div id="resultados-laudo"></div>
+          </div>
+          <div class="report-actions">
+            <a href="paciente.html" class="secondary-button">
+              ← Voltar para meus exames
+            </a>
+
+            <button class="primary-button" onclick="window.print()">
+              Imprimir laudo
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
-
-</body>
-
+    <script src="/static/laudo.js"></script>
+  </body>
 </html>

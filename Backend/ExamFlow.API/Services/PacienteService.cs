@@ -15,6 +15,10 @@ namespace ExamFlow.API.Services
         {
             return await _repository.ObterPacientePorId(id);
         }
+        public async Task<Paciente?> ObterPacientePorUsuarioId(int usuarioId)
+        {
+            return await _repository.ObterPacientePorUsuarioId(usuarioId);
+        }
         public async Task<Paciente> CriarPaciente(Paciente paciente)
         {
             return await _repository.CriarPaciente(paciente);

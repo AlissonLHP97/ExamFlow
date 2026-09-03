@@ -29,5 +29,11 @@ namespace ExamFlow.API.Repositories
             return paciente;
 
         }
+        public async Task<Paciente?> ObterPacientePorUsuarioId(int usuarioId)
+        {
+            return await _context.Pacientes
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.UsuarioId == usuarioId);
+        }
     }
 }
