@@ -14,7 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="db\dataset\" />
+    <Content Include="db\**\*.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
