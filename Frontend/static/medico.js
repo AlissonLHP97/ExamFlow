@@ -1,6 +1,6 @@
-const API_URL = "https://localhost:7113/api/solicitacaoexames";
-const PACIENTES_API_URL = "https://localhost:7113/api/paciente";
-const EXAMES_API_URL = "https://localhost:7113/api/exame";
+const API_URL = "http://localhost:8080/api/solicitacaoexames";
+const PACIENTES_API_URL = "http://localhost:8080/api/paciente";
+const EXAMES_API_URL = "http://localhost:8080/api/exame";
 
 let solicitacoesMedico = [];
 

@@ -1,54 +1,45 @@
 let pacientes = [];
 
 async function carregarPacientes() {
+  try {
+    const response = await fetch("http://localhost:8080/api/Paciente");
 
-    try {
+    if (!response.ok) {
+      throw new Error("Erro ao buscar pacientes.");
+    }
 
-        const response = await fetch(
-            "https://localhost:7113/api/Paciente"
-        );
+    pacientes = await response.json();
 
-        if (!response.ok) {
-            throw new Error("Erro ao buscar pacientes.");
-        }
+    // Atualiza o total de pacientes
+    const totalPacientes = document.getElementById("total-pacientes");
 
-        pacientes = await response.json();
+    if (totalPacientes) {
+      totalPacientes.textContent = pacientes.length;
+    }
 
-        // Atualiza o total de pacientes
-        const totalPacientes = document.getElementById("total-pacientes");
+    mostrarPacientes(pacientes);
+  } catch (error) {
+    console.error("Erro:", error);
 
-        if (totalPacientes) {
-            totalPacientes.textContent = pacientes.length;
-        }
+    const lista = document.getElementById("lista-pacientes");
 
-        mostrarPacientes(pacientes);
-
-    } catch (error) {
-
-        console.error("Erro:", error);
-
-        const lista = document.getElementById("lista-pacientes");
-
-        lista.innerHTML = `
+    lista.innerHTML = `
             <tr>
                 <td colspan="4">
                     Não foi possível carregar os pacientes.
                 </td>
             </tr>
         `;
-    }
+  }
 }
 
-
 function mostrarPacientes(listaPacientes) {
+  const lista = document.getElementById("lista-pacientes");
 
-    const lista = document.getElementById("lista-pacientes");
+  lista.innerHTML = "";
 
-    lista.innerHTML = "";
-
-    if (listaPacientes.length === 0) {
-
-        lista.innerHTML = `
+  if (listaPacientes.length === 0) {
+    lista.innerHTML = `
             <tr>
                 <td colspan="4">
                     Nenhum paciente encontrado.
@@ -56,14 +47,13 @@ function mostrarPacientes(listaPacientes) {
             </tr>
         `;
 
-        return;
-    }
+    return;
+  }
 
-    listaPacientes.forEach(paciente => {
+  listaPacientes.forEach((paciente) => {
+    const linha = document.createElement("tr");
 
-        const linha = document.createElement("tr");
-
-        linha.innerHTML = `
+    linha.innerHTML = `
             <td>
                 <strong>${paciente.nome}</strong>
             </td>
@@ -81,51 +71,36 @@ function mostrarPacientes(listaPacientes) {
             </td>
         `;
 
-        lista.appendChild(linha);
-
-    });
+    lista.appendChild(linha);
+  });
 }
-
 
 function formatarData(data) {
+  if (!data) {
+    return "";
+  }
 
-    if (!data) {
-        return "";
-    }
-
-    return new Date(data).toLocaleDateString("pt-BR");
+  return new Date(data).toLocaleDateString("pt-BR");
 }
-
 
 const campoBusca = document.getElementById("buscar-paciente");
 
 if (campoBusca) {
+  campoBusca.addEventListener("input", function () {
+    const busca = campoBusca.value.toLowerCase().trim();
 
-    campoBusca.addEventListener("input", function () {
+    const pacientesFiltrados = pacientes.filter((paciente) => {
+      const nome = paciente.nome?.toLowerCase() || "";
+      const cpf = paciente.cpf?.toLowerCase() || "";
+      const telefone = paciente.telefone?.toLowerCase() || "";
 
-        const busca = campoBusca.value
-            .toLowerCase()
-            .trim();
-
-        const pacientesFiltrados = pacientes.filter(paciente => {
-
-            const nome = paciente.nome?.toLowerCase() || "";
-            const cpf = paciente.cpf?.toLowerCase() || "";
-            const telefone = paciente.telefone?.toLowerCase() || "";
-
-            return (
-                nome.includes(busca) ||
-                cpf.includes(busca) ||
-                telefone.includes(busca)
-            );
-
-        });
-
-        mostrarPacientes(pacientesFiltrados);
-
+      return (
+        nome.includes(busca) || cpf.includes(busca) || telefone.includes(busca)
+      );
     });
 
+    mostrarPacientes(pacientesFiltrados);
+  });
 }
-
 
 carregarPacientes();

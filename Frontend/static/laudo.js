@@ -1,4 +1,4 @@
-const SOLICITACOES_API_URL = "https://localhost:7113/api/solicitacaoexames";
+const SOLICITACOES_API_URL = "http://localhost:8080/api/solicitacaoexames";
 
 async function carregarLaudo() {
   const parametros = new URLSearchParams(window.location.search);

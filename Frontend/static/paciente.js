@@ -1,5 +1,5 @@
-const PACIENTE_API_URL = "https://localhost:7113/api/paciente";
-const SOLICITACOES_API_URL = "https://localhost:7113/api/solicitacaoexames";
+const PACIENTE_API_URL = "http://localhost:8080/api/paciente";
+const SOLICITACOES_API_URL = "http://localhost:8080/api/solicitacaoexames";
 
 let pacienteLogado = null;
 let solicitacoesPaciente = [];

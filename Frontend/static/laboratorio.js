@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:7113/api/solicitacaoexames";
+const API_URL = "http://localhost:8080/api/solicitacaoexames";
 
 let solicitacoesLaboratorio = [];
 

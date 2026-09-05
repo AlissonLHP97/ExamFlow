@@ -43,5 +43,18 @@ services:
       sqlserver:
         condition: service_healthy
 
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+
+    container_name: examflow-frontend
+
+    ports:
+      - "8081:80"
+
+    depends_on:
+      - api
+
 volumes:
   examflow_sql_data:
